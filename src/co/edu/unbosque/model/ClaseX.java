@@ -1,17 +1,50 @@
 package co.edu.unbosque.model;
-
 import java.util.ArrayList;
 import java.util.Formatter;
 import java.util.List;
 
+/**
+
+ * Esta clase muestra la cantidad de calorias que se pueden consumir segun unos platos registrados previamente
+
+ * @author: Sergio A Sanabria Garcia, Santiago Cortes Motoa, Juñlian Santiago Cortes Gomez
+
+ * @version: 5/12/2022
+
+ */
+
 public class ClaseX {
 
-	public static int I = Integer.MAX_VALUE;
+	public static int I = 0;
+	
+	/**
 
+     * Metodo que encuentra el valor minimo entre dos numeros
+
+     * @param a El parámetro a un numero a comparar
+     
+     * @param b El parámetro b un numero a comparar
+     
+     * @return El número de menor entre a y b
+
+     */
 	static int Min(int a, int b) {
 		return (b < a) ? b : a;
 	}
 
+	/**
+
+     * Metodo que calcula y genera todas las posibilidades de platos y añade las posibilidades en una matriz
+
+     * @param lista El parámetro lista es la lista de platos con sus calorias correspondientes
+     
+     * @param N El parámetro N es el tamaño de la lista
+     * 
+     * @param C El parámetro C es la cantidad de calorias 
+     
+     * @return La matriz de las posibles soluciones para llegar a las calorias deseadas
+
+     */
 	public static int[][] Calcular(int[] lista, int N, int C) {
 		
 		int MaxElem = N + 1;
@@ -51,6 +84,21 @@ public class ClaseX {
 		return tabla;
 	}
 
+	/**
+
+     * Metodo que organiza que platos son los adecuados para la solucion del problema
+
+     * @param t El parámetro t es la matriz con las posibles soluciones del plato
+     
+     * @param l El parámetro l es la array con los platos y sus calorias
+     * 
+     * @param N El parámetro N es el tamaño o la cantidad de platos
+     * 
+     * @param C El parámetro C es la cantidad de calorias 
+     
+     * @return La array de objetos con los platos que satisfacen la problematica
+
+     */
 	private static Object[] Resultado(int[][] t, int[] l, int N, int C) {
 		List<Integer> r = new ArrayList<Integer>();
 		int i = N;
@@ -65,9 +113,23 @@ public class ClaseX {
 				i--;
 			}
 		}
+		System.out.println("Contenido de resultado");
+		for(int p = 0; p<r.size();p++) {
+		  System.out.println(r.get(p));
+		}
 		return r.toArray();
 	}
 
+	/**
+
+     * Metodo que resuelve e imprime la cantidad de platos que se necesitan y la cantidad de calorias que se consumen
+
+     * @param lista El parámetro lista es la lista de platos con sus calorias correspondientes
+     
+     * @param C El parámetro C es el tamaño de la lista
+
+     */
+	
 	public static void Resolver(int[] lista, int C) {
 		
 		int[][] tabla = Calcular(lista, lista.length, C);
@@ -106,28 +168,24 @@ public class ClaseX {
 
 	}
 
+	/**
+     * Devuelve la cantidad de calorias totales 
+     * @return calorias totales
+     */
+	
 	public static int getI() {
 		return I;
 	}
 
+	 /**
+     * Modifica la cantidad totales de calorias
+     * @param I
+     */
+	
 	public static void setI(int i) {
 		I = i;
 	}
 	
 	
-
-				
-//				int[] lista = { 7, 8, 9, 4, 5, 6 };
-//				Resolver(lista, 10);
-//				Resolver(lista, 37);
-//				
-//				int[] lista2 = { 11, 9, 5, 3 };
-//				Resolver(lista2, 18);
-//				Resolver(lista2, 15);
-//
-//				int[] lista3 = { 8, 16, 24, 32 };
-//				Resolver(lista3, 27);
-//				Resolver(lista3, 42);
-
 	
 }

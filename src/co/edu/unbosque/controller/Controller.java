@@ -11,11 +11,23 @@ public class Controller {
 	private ClaseX m;
 	private View gui;
 
+	/**
+
+     * Metodo que permite ejecutar el programa
+
+     */
+	
 	public Controller() {
 
 		inicializar();
 		
 	}
+	
+	/**
+
+     * Metodo que realiza la recoleccion de informacion para los diferentes problemas
+
+     */
 
 	public void inicializar() {
 
