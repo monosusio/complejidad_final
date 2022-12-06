@@ -10,7 +10,7 @@ import java.util.List;
  * platos registrados previamente
  * 
  * @author: Sergio A Sanabria Garcia, Santiago Cortes Motoa, Juñlian Santiago
- *          Cortes Gomez
+ *          Cortes Gomez, Cristias Santiago Cruz
  * 
  * @version: 5/12/2022
  * 

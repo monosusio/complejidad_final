@@ -3,13 +3,16 @@ package co.edu.unbosque.controller;
 import java.util.Scanner;
 
 import co.edu.unbosque.model.ClaseX;
-import co.edu.unbosque.view.View;
+import co.edu.unbosque.model.Model;
+import co.edu.unbosque.view.ViewVentanas;
 
 public class Controller {
 
+	
 	Scanner sc = new Scanner(System.in);
 	private ClaseX m;
-	private View gui;
+	private ViewVentanas view;
+	private Model model;
 
 	/**
 
@@ -19,6 +22,8 @@ public class Controller {
 	
 	public Controller() {
 
+		view = new ViewVentanas();
+		model = new Model();
 		inicializar();
 		
 	}
@@ -71,6 +76,21 @@ public class Controller {
 				break;
 				
 			case 3:
+				
+				System.out.println();
+				System.out.println("Ingrese el tamano de la matriz M x N \n" + "Ingrese el valor de M");
+				int m = sc.nextInt();
+				System.out.println("Ingrese el valor de N");
+				int n = sc.nextInt();
+				System.out.println("Ingrese cantidad de casillas que se desea mover");
+				int p = sc.nextInt();
+				System.out.println(
+						"Ingrese la direccion en la que quiere hacer ese movimiento \n" + "1.horizontal \n" + "2.vertical");
+				int d = sc.nextInt();
+				System.out.println("Ingrese un segundo movimiento de casillas el cual sera en direccion perpendicular al anteriormente seleccionado");
+				int q = sc.nextInt();
+				System.out.println(model.saltos(m, n, p, d, q));
+				break;
 
 			case 4:
 				
